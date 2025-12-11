@@ -84,7 +84,7 @@ export default function Faq() {
 
               <div className="mb-8">
                 <h3 className="text-2xl pb-2 text-[#6f1c0b] font-bold">Can we touch the model?</h3>
-                <p>A little cheeky fun is part of the experience and our models are usually happy to play along!😉
+                <p>A little cheeky fun is part of the experience and our models are usually happy to play along! Their job is to entertain you afterall😉
                 <br></br>Just make sure you ask first, and always respect their comfort level.</p>
               </div>
             </div>
