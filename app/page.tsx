@@ -10,7 +10,7 @@ export default function Home() {
         <div className="relative z-10 max-w-4l w-full lg:pl-20">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:text-left font-bold mb-4 text-white">
             The First and Only 
-            <br></br>Hen Party Life Drawing Class
+            <br></br>Hen Party Life Drawing Experience
             <br></br>in Hong Kong
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 lg:text-left text-white">
