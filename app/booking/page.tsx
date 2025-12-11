@@ -18,8 +18,38 @@ export default function BookingPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const firstName = formData.get("firstName") || "";
+    const lastName = formData.get("lastName") || "";
+    const email = formData.get("email") || "";
+    const phone = formData.get("phone") || "";
+    const location = formData.get("location") || "";
+    const instructor = formData.get("instructor") || "";
+    const eventType = formData.get("eventType") || "";
+    const duration = formData.get("duration") || "";
+    const date = formData.get("date") || "";
+    const message = formData.get("message") || "";
+
     const selectedTime = `${hour}:${minute} ${period}`;
+
+    // GA4 tracking
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "booking_submission", {
+        event_category: "Booking",
+        event_label: `Event Type: ${eventType}, Location: ${location}, Time: ${selectedTime}`,
+        value: 1,
+      });
+    }
+
     alert(`Form submitted! Event Time: ${selectedTime}`);
+
+    // Reset form fields
+    e.currentTarget.reset();
+    setHour("");
+    setMinute("");
+    setPeriod("");
   };
 
   return (
@@ -37,8 +67,6 @@ export default function BookingPage() {
         </p>
       </div>
 
-    {/* Form */}
-
       <div className="px-6 py-20 flex justify-center bg-[#FCCFC5]">
         <form className="p-10 max-w-5xl mx-auto" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -48,6 +76,7 @@ export default function BookingPage() {
               <div>
                 <label className="block mb-1">First Name</label>
                 <input
+                  name="firstName"
                   type="text"
                   required
                   pattern="[A-Za-z ]+"
@@ -58,6 +87,7 @@ export default function BookingPage() {
               <div>
                 <label className="block mb-1">Email</label>
                 <input
+                  name="email"
                   type="email"
                   required
                   className="w-full border p-3 bg-white"
@@ -66,7 +96,7 @@ export default function BookingPage() {
 
               <div>
                 <label className="block mb-1">Event Location</label>
-                <select required className="w-full border p-3 h-13 bg-white">
+                <select name="location" required className="w-full border p-3 h-13 bg-white">
                   <option value="">Select Event Location</option>
                   <optgroup label="Hong Kong Island">
                     <option>Central & Western</option>
@@ -74,7 +104,6 @@ export default function BookingPage() {
                     <option>Southern</option>
                     <option>Wan Chai</option>
                   </optgroup>
-
                   <optgroup label="Kowloon">
                     <option>Kowloon City</option>
                     <option>Kwun Tong</option>
@@ -82,7 +111,6 @@ export default function BookingPage() {
                     <option>Wong Tai Sin</option>
                     <option>Yau Tsim Mong</option>
                   </optgroup>
-
                   <optgroup label="New Territories">
                     <option>Tsuen Wan</option>
                     <option>Tuen Mun</option>
@@ -94,17 +122,15 @@ export default function BookingPage() {
                     <option>Tai Po</option>
                     <option>Islands</option>
                   </optgroup>
-
                   <optgroup label="Our Studio Location">
                     <option>To Kwa Wan</option>
                   </optgroup>
-
                 </select>
               </div>
 
               <div>
                 <label className="block mb-1">Art Instructor Needed?</label>
-                <select required className="w-full border p-3 h-13 bg-white">
+                <select name="instructor" required className="w-full border p-3 h-13 bg-white">
                   <option value="">Select Option</option>
                   <option>No</option>
                   <option>Yes (+$700)</option>
@@ -114,6 +140,7 @@ export default function BookingPage() {
               <div>
                 <label className="block mb-1">Message</label>
                 <textarea
+                  name="message"
                   required
                   rows={6}
                   className="w-full border p-3 resize-none bg-white"
@@ -126,6 +153,7 @@ export default function BookingPage() {
               <div>
                 <label className="block mb-1">Last Name</label>
                 <input
+                  name="lastName"
                   type="text"
                   required
                   pattern="[A-Za-z ]+"
@@ -136,6 +164,7 @@ export default function BookingPage() {
               <div>
                 <label className="block mb-1">Phone</label>
                 <input
+                  name="phone"
                   type="text"
                   required
                   maxLength={9}
@@ -146,7 +175,7 @@ export default function BookingPage() {
 
               <div>
                 <label className="block mb-1">Event Type</label>
-                <select required className="w-full border p-3 h-13 bg-white">
+                <select name="eventType" required className="w-full border p-3 h-13 bg-white">
                   <option value="">Select Event Type</option>
                   <option>Classic Life Drawing</option>
                   <option>Cheeky Butler</option>
@@ -156,7 +185,7 @@ export default function BookingPage() {
 
               <div>
                 <label className="block mb-1">Event Duration</label>
-                <select required className="w-full border p-3 h-13 bg-white">
+                <select name="duration" required className="w-full border p-3 h-13 bg-white">
                   <option value="">Select Duration</option>
                   <option>2 hours</option>
                   <option>2.5 hours</option>
@@ -167,6 +196,7 @@ export default function BookingPage() {
               <div>
                 <label className="block mb-1">Event Date</label>
                 <input
+                  name="date"
                   type="date"
                   required
                   className="w-full border p-3 bg-white"
@@ -184,9 +214,7 @@ export default function BookingPage() {
                   >
                     <option value="">Hour</option>
                     {[...Array(12)].map((_, i) => (
-                      <option key={i} value={i + 1}>
-                        {i + 1}
-                      </option>
+                      <option key={i} value={i + 1}>{i + 1}</option>
                     ))}
                   </select>
 
@@ -199,17 +227,13 @@ export default function BookingPage() {
                     <option value="">Minute</option>
                     {[...Array(60)].map((_, i) => {
                       const val = i < 10 ? `0${i}` : `${i}`;
-                      return (
-                        <option key={i} value={val}>
-                          {val}
-                        </option>
-                      );
+                      return <option key={i} value={val}>{val}</option>;
                     })}
                   </select>
 
                   <select
                     required
-                    className="w-1/3 border p-3h-13 bg-white"
+                    className="w-1/3 border p-3 h-13 bg-white"
                     value={period}
                     onChange={(e) => setPeriod(e.target.value)}
                   >
