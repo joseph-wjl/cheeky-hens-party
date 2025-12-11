@@ -12,18 +12,21 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata = {
   title: "Cheeky Hen Party",
-  description: "Fun, cheeky, creative hen party life drawing experiences in Hong Kong with professional male models.",
+  description: "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
   keywords: [
     "Hen party Hong Kong",
-    "Life drawing class",
+    "Life drawing class Hong Kong",
     "Cheeky Hen Party",
     "Bachelorette party Hong Kong",
-    "Hen night ideas",
-    "Private art party"
+    "Hen night ideas Hong Kong",
+    "Private party Hong Kong",
+    "Life drawing Hong Kong",
+    "Girls night Hong Kong",
+    "Topless Butler Hong Kong"
   ],
   openGraph: {
     title: "Cheeky Hen Party",
-    description: "Fun, cheeky, creative hen party life drawing experiences in Hong Kong with professional male models.",
+    description: "FThe first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
     url: "https://www.cheekyhenparty.com",
     type: "website",
     images: [
@@ -38,7 +41,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cheeky Hen Party",
-    description: "Fun, cheeky, creative hen party life drawing experiences in Hong Kong with professional male models.",
+    description: "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
     images: ["https://www.cheekyhenparty.com/images/hero.jpg"]
   }
 };
@@ -103,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "@type": "LocalBusiness",
       "@id": "https://cheekyhenparty.com/#business",
       "name": "Cheeky Hen Party Hong Kong",
-      "description": "Fun, cheeky, creative hen party life drawing experiences in Hong Kong.",
+      "description": "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
       "url": "https://cheekyhenparty.com",
       "areaServed": {
         "@type": "AdministrativeArea",
@@ -135,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "@context": "https://schema.org",
       "@type": "Event",
       "name": "Cheeky Hen Party Life Drawing",
-      "description": "Fun hen party life drawing experiences in Hong Kong with cheeky, professional male models.",
+      "description": "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "startDate": "2024-01-01",
