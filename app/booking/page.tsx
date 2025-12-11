@@ -9,9 +9,9 @@ export default function BookingPage() {
   const [period, setPeriod] = useState("");
 
   // Formspree setup
-  const [state, handleSubmitSpree] = useForm("myzrbzgk"); // your Formspree form ID
+  const [state, handleSubmitSpree] = useForm("myzrbzgk");
 
-  // phone formatter (no useState)
+  // phone formatter
   const formatPhone = (e: React.FormEvent<HTMLInputElement>) => {
     let v = e.currentTarget.value.replace(/\D/g, "").slice(0, 8);
     if (v.length > 4) {
@@ -65,13 +65,13 @@ export default function BookingPage() {
   return (
     <>
       <div className="px-6 py-20 bg-[#FEEFEC] text-center text-[#82310e]">
-        <h1 className="text-6xl font-bold mb-10">Booking Request Form</h1>
-        <h2 className="text-2xl mb-8">
+        <h1 className="text-5xl sm:text-6xl font-bold mb-10">Booking Request Form</h1>
+        <h2 className="text-xl sm:text-2xl mb-8">
           Let's Create Something Beautiful (and a little cheeky!)
         </h2>
         <p className="mb-5">
           Use the form below to check availability, request a quote or any other
-          questions you may have on our Hens Party Packages.
+          questions you may have on our Hen Party Packages.
         </p>
         <p>
           Our team is more than happy to help and will get back to you within 24
@@ -81,7 +81,7 @@ export default function BookingPage() {
 
       <div className="px-6 py-20 flex justify-center bg-[#FCCFC5]">
         <form
-          className="p-10 max-w-5xl mx-auto"
+          className="p-10 max-w-5xl mx-auto w-full"
           onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -245,10 +245,10 @@ export default function BookingPage() {
 
               <div>
                 <label className="block mb-1">Event Time</label>
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <select
                     required
-                    className="w-1/3 border p-3 h-13 bg-white"
+                    className="w-full sm:w-1/3 border p-3 h-13 bg-white"
                     value={hour}
                     onChange={(e) => setHour(e.target.value)}
                     tabIndex={10}
@@ -261,7 +261,7 @@ export default function BookingPage() {
 
                   <select
                     required
-                    className="w-1/3 border p-3 h-13 bg-white"
+                    className="w-full sm:w-1/3 border p-3 h-13 bg-white"
                     value={minute}
                     onChange={(e) => setMinute(e.target.value)}
                     tabIndex={12}
@@ -275,7 +275,7 @@ export default function BookingPage() {
 
                   <select
                     required
-                    className="w-1/3 border p-3 h-13 bg-white"
+                    className="w-full sm:w-1/3 border p-3 h-13 bg-white"
                     value={period}
                     onChange={(e) => setPeriod(e.target.value)}
                     tabIndex={13}
