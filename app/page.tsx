@@ -18,7 +18,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center lg:justify-start">
             <a
-              href="#idea"
+              href="/packages/classic-life-drawing"
               className="px-6 py-2 sm:px-10 sm:py-3 text-white border border-white hover:text-black hover:border-black transition"
             >
               Get Started

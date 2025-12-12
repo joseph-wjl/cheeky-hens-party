@@ -12,7 +12,7 @@ export default function Contact() {
             Contact Us
           </h2>
           <p className="text-2xl mb-12 text-white">
-            Get in touch with the Cheeky Hens team
+            Get in touch with the Cheeky Hen team
           </p>
         </div>
       </section>
@@ -70,8 +70,8 @@ export default function Contact() {
 
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-bold mb-4 text-[#82310e]">Other Ways to Reach Us</h3>
-            <p className="text-lg mb-2">📧 Email: info@cheekyhens.com</p>
-            <p className="text-lg mb-2">📞 Phone: +852 XXXX XXXX</p>
+            <p className="text-lg mb-2">📧 Email: cheekyhenparty@gmail.com</p>
+            <p className="text-lg mb-2">📞 Phone: +852 5785-6409</p>
             <p className="text-lg">📍 Location: Hong Kong</p>
           </div>
         </div>
