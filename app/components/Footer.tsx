@@ -8,10 +8,10 @@ export default function Footer() {
                 <div>
                   <h2 className="text-4xl pb-8">Contact Us</h2>
                   <p className="pb-3">Email: cheekyhenparty@gmail.com</p>
-                  <p>WhatsApp: 5785-6409</p>
+                  <a href="https://wa.me/85257856409" target="_blank"><p>WhatsApp: 5785-6409</p></a>
                   <p className="pt-6 pb-2">Follow Us on Socials</p>
                   <a href="https://www.instagram.com/cheekyhenpartyhk?igsh=MWx3b2N2Y3Vqc2pvcg%3D%3D&utm_source=qr" target="_blank"><i className="fa-brands fa-instagram fa-2x pr-4 cursor-pointer hover:opacity-70"></i></a>
-                  <i className="fa-brands fa-square-facebook fa-2x cursor-pointer hover:opacity-70"></i>
+                  <a href="https://www.facebook.com/share/1CpLKiRZUY/?mibextid=wwXIfr" target="_blank"><i className="fa-brands fa-square-facebook fa-2x cursor-pointer hover:opacity-70"></i></a>
                 </div>
                 <div className="text-left">
                   <h3 className="font-bold text-lg pb-3">Company</h3>

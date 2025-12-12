@@ -61,6 +61,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={playfairDisplay.variable}>
       <head>
+        
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+
         {/* Structured Data: Event */}
         <script
           type="application/ld+json"
