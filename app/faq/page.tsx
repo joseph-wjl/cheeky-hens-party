@@ -91,10 +91,10 @@ export default function Faq() {
                   q: "What's included in the package?",
                   a: "Our packages include a nude hunky male model and all art supplies (sketching pencils, charcoals, pastels, A3 paper, etc.).",
                 },
-                {
-                  q: "Can we touch the model?",
-                  a: "A little cheeky fun is part of the experience and our models are usually happy to play along! Their job is to entertain you after all 😉\nJust make sure you ask first, and always respect their comfort level.",
-                },
+                // {
+                //   q: "Can we touch the model?",
+                //   a: "A little cheeky fun is part of the experience and our models are usually happy to play along! Their job is to entertain you after all 😉\nJust make sure you ask first, and always respect their comfort level.",
+                // },
               ].map((item, i) => (
                 <Reveal key={i} delay={i * 100}>
                   <div>
