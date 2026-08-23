@@ -56,10 +56,7 @@ export default function Faq() {
                   q: "Do we get an art instructor?",
                   a: "Yes! you can choose to include a friendly art instructor to guide your session, help guests with simple techniques, and keep the party flowing.\nThis is an optional add-on and can be selected when you book.",
                 },
-                {
-                  q: "Can we take photos or videos?",
-                  a: "Absolutely! You're more than welcome to take photos and videos to capture the fun.",
-                },
+                
               ].map((item, i) => (
                 <Reveal key={i} delay={i * 100}>
                   <div>
@@ -90,6 +87,10 @@ export default function Faq() {
                 {
                   q: "What's included in the package?",
                   a: "Our packages include a nude hunky male model and all art supplies (sketching pencils, charcoals, pastels, A3 paper, etc.).",
+                },
+                {
+                  q: "Can we take photos or videos?",
+                  a: "Absolutely! You're more than welcome to take photos and videos to capture the fun.",
                 },
                 // {
                 //   q: "Can we touch the model?",
